@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RELEASE_URL_BASE="https://raw.githubusercontent.com/genhub-tech/majinbo-clients/master/clients"
+RELEASE_URL_BASE="https://github.com/genhub-tech/majinbo-clients/raw/master/clients"
 YES=""
 
 trap 'rm -f /tmp/exec.$$' 0
