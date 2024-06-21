@@ -9,13 +9,14 @@ trap 'exit $?' 1 2 3 15
 ARCH=$(uname -m)
 OS=$(uname -s)
 
+# Detect the correct platform and set the appropriate URL
 if [ "$ARCH" = "x86_64" ] && [ "$OS" = "Linux" ]; then
     RELEASE_URL="$RELEASE_URL_BASE/majinbo-linux-amd64"
 elif [ "$ARCH" = "aarch64" ] && [ "$OS" = "Linux" ]; then
     echo "The platform linux-aarch64 is not available yet."
     exit 1
-elif [ "$ARCH" = "arm64" ] && [ "$OS" = "Darwin" ]; then
-    RELEASE_URL="$RELEASE_URL_BASE/majinbo-darwin-arm64"
+elif [ "$ARCH" = "arm64" ] && [[ "$OSTYPE" == "darwin"* ]]; then
+    RELEASE_URL="$RELEASE_URL_BASE/majinbo-darwin-aarch64"
 else
     echo "Unsupported platform: $OS $ARCH. The platform is not available yet."
     exit 1
