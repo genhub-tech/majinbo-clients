@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 RELEASE_URL_BASE="https://raw.githubusercontent.com/genhub-tech/majinbo-clients/master/clients"
 YES=""
